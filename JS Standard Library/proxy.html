@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy</title>
+</head>
+<body>
+<script>
+
+    const target = {
+        middleName: "Prayogo",
+    };
+
+    const handler = {
+        get: function (target, property) {
+            console.log(`Access property : ${property}`);
+            return target[property];
+        },
+        set: function (target, property, value) {
+            console.log(`Change property ${property} : ${value}`);
+            if (value == null) {
+                // throw new Error("Tidak boleh null");
+                target[property] = "";
+            } else {
+                target[property] = value;
+            }
+        }
+    };
+
+    const proxy = new Proxy(target, handler);
+    proxy.firstName = "Dendi";
+    proxy.lastName = null;
+
+    console.log(proxy.firstName);
+    console.log(proxy.middleName);
+    console.log(proxy.lastName);
+    console.log(target);
+
+</script>
+</body>
+</html>

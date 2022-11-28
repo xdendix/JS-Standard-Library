@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp</title>
+</head>
+<body>
+<script>
+
+    {
+        // create regex
+
+        const regex1 = /dendi/;
+        const regex2 = new RegExp("dendi");
+        const regex3 = new RegExp(/dendi/);
+    }
+
+    {
+        // test regex
+
+        const name = "dendi prayogo dendi hidayat";
+        const regex = /dendi/;
+
+        const result = regex.exec(name);
+        console.log(result);
+        console.log(regex.exec("tidak ada"));
+
+        const test = regex.test(name);
+        console.log(test);
+        console.log(regex.test("tidak ada"));
+    }
+
+    {
+        // regex modifier
+
+        const name = "dendi prayogo\nDendi hidayat\nDeni Prayogo";
+        const regex1 = /^e.o/igm;
+        const regex2 = /Prayogo/ig;
+
+        let result;
+        while ((result = regex1.exec(name)) !== null) {
+            console.log(result);
+        }
+
+        while ((result = regex2.exec(name)) !== null) {
+            console.log(result);
+        }
+    }
+
+    {
+        // advance regex
+
+        const regex = /de[ioaeu]/ig;
+
+        const name = "dendi denda dendu dende dondo";
+        let result;
+        while ((result = regex.exec(name)) !== null) {
+            console.log(result);
+        }
+    }
+
+    {
+        const name = "denda dendu dendi dende dondo prayogo";
+
+        console.log(name.match(/de[aiueo]/ig));
+        console.log(name.search(/de[aiueo]/ig));
+        console.log(name.replace(/de[aiueo]/i, "kamu"));
+        console.log(name.replaceAll(/de[aiueo]/ig, "kamu"));
+        console.log(name.split(/d/ig));
+    }
+
+</script>
+</body>
+</html>

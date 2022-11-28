@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number</title>
+</head>
+<body>
+<script>
+
+    const input = "12345";
+    const number = Number(input);
+
+    console.log(typeof input); // string
+    console.log(typeof number); // number
+    console.log(number); // 12345
+
+    console.log(Number("salah")); // NaN
+
+    console.log(Number.MIN_VALUE); // 5e-324
+    console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
+    console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991
+    console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+    console.log(Number.NaN); // NaN
+
+    const data = Number("dendi");
+    console.log(Number.isInteger(data)); // false
+    console.log(Number.isNaN(data)); // true
+
+    const value = Number("12345");
+    console.log(value.toString(2)); // 11000000111001
+    console.log(value.toLocaleString("id-ID")); // 12.345
+    console.log(value.toLocaleString("en-US")); // 12,345
+
+</script>
+</body>
+</html>

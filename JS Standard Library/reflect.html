@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflect</title>
+</head>
+<body>
+<script>
+
+    const person = {};
+
+    Reflect.set(person, "firstName", "Dendi");
+    Reflect.set(person, "lastName", "Hidayat");
+
+    console.log(person);
+
+    // mendapatkan nilai properti
+    console.log(Reflect.get(person, "firstName"));
+    console.log(Reflect.get(person, "lastName"));
+
+    // mengecek apakah properti ada
+    console.log(Reflect.has(person, "firstName"));
+    console.log(Reflect.has(person, "middleName"));
+    console.log(Reflect.has(person, "lastName"));
+
+</script>
+</body>
+</html>

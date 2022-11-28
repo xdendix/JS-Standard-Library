@@ -1,0 +1,10 @@
+{
+    "firstName": "Dendi",
+    "middleName": "Prayogo",
+    "lastName": "Hidayat",
+    "address": {
+        "country": "Indonesia",
+        "city": "Depok"
+    },
+    "hobbies": ["playing games", "reading", "coding"]
+}
